@@ -1,0 +1,21 @@
+{
+  "name": "swag-shop-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "bdd": "cucumber-js features --require-module ts-node/register --require src/support/world.ts --require src/steps/**/*.ts",
+    "bdd:ci": "cucumber-js features --require-module ts-node/register --require src/support/world.ts --require src/steps/**/*.ts --format summary"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^24.0.10",
+    "ts-node": "^10.9.2"
+  }
+}

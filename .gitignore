@@ -1,0 +1,34 @@
+# Node dependencies
+node_modules/
+
+# Playwright test outputs
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*.trace
+*.zip
+*.har
+
+# Reports
+/reports/
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+
+# VS Code config
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Optional: Output folders
+dist/
+out/
+lib/
