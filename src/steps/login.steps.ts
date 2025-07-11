@@ -3,9 +3,6 @@ import { chromium, expect, Page } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { InventoryPage } from '../pages/InventoryPage';
 
-//let page: Page;
-//let loginPage: LoginPage;
-//let inventoryPage: InventoryPage;
 
 Given('I am on the login page', async function () {
   console.log('[Step] this is', this); // should now show PlaywrightWorld
