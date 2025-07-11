@@ -4,8 +4,8 @@ import { InventoryPage } from "./InventoryPage";
 export class LoginPage {
   private page: Page;
   static readonly path = '/';
-
-    constructor(page: Page) {
+  
+  constructor(page: Page) {
     this.page = page;
   }
 

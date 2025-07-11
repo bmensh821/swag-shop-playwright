@@ -1,23 +1,29 @@
-// src/support/world.ts
-import { setWorldConstructor, IWorldOptions, World as CucumberWorld } from '@cucumber/cucumber';
+import { setWorldConstructor, IWorldOptions, setDefaultTimeout, After } from '@cucumber/cucumber';
 import { Browser, Page, chromium } from '@playwright/test';
 
-export class PlaywrightWorld extends CucumberWorld {
+export class PlaywrightWorld {
   browser!: Browser;
   page!: Page;
 
   constructor(options: IWorldOptions) {
-    super(options); // ✅ Important: Call the base class constructor
+    // Optional: you can access options.parameters if passed
   }
 
   async init() {
-    this.browser = await chromium.launch({ headless: false }); // for visual debugging
+    this.browser = await chromium.launch({ headless: false });
     this.page = await this.browser.newPage();
   }
 
-  async dispose() {
-    await this.browser.close();
+  async close() {
+    await this.browser?.close();
   }
 }
 
 setWorldConstructor(PlaywrightWorld);
+setDefaultTimeout(20000);
+
+After(async function () {
+  if (this.close) {
+    await this.close();
+  }
+});
